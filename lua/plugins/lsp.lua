@@ -281,3 +281,10 @@
     --         'folke/neodev.nvim',
     --     },
     -- }
+    --
+    --
+    --
+    return {
+
+       'neovim/nvim-lspconfig',
+    }

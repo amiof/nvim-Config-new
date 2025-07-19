@@ -21,12 +21,19 @@
 --- ```
 return {
   cmd = { 'vscode-css-language-server', '--stdio' },
-  filetypes = { 'css', 'scss', 'less' },
+  filetypes = { 'css', 'scss', 'less', "javascriptreact", "typescriptreact" },
   init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
   root_markers = { 'package.json', '.git' },
   settings = {
     css = { validate = true },
     scss = { validate = true },
     less = { validate = true },
+    cssModules = {
+      enable = true,  -- Critical for CSS Modules
+      lint = {
+        incompatibleVendorPrefixes = "ignore",
+        duplicateProperties = "ignore"
+      }
+    }
   },
 }

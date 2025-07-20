@@ -21,7 +21,7 @@ return {
 
     configs.setup {
 
-      ensure_installed = { 'c', 'cpp', 'go', 'lua','java','python', 'rust', 'tsx', 'typescript', 'vimdoc','javascript', 'vim' },
+      ensure_installed = { 'c', 'cpp', 'go', 'lua', 'java', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'javascript', 'vim', "fish", "scss", "css", "cmake","cpp","astro","http", "sql", "svelte", "graphql", "gitignore" },
 
       modules = {},
       sync_install = true,
@@ -31,8 +31,8 @@ return {
       auto_install = false,
 
       highlight = {
-        enable = true,                                      -- false will disable the whole extension
-        disable = {  },                               -- list of language that will be disabled
+        enable = true,  -- false will disable the whole extension
+        disable = {},   -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
       },
       autopairs = {
@@ -46,10 +46,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = '<c-s>',
-            node_decremental = '<M-space>',
+          init_selection = '<c-space>',
+          node_incremental = '<c-space>',
+          scope_incremental = '<c-s>',
+          node_decremental = '<M-space>',
         },
       },
 
@@ -113,6 +113,5 @@ return {
         },
       },
     }
-
   end
 }

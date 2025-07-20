@@ -36,6 +36,6 @@ return {
             },
             exclude_groups = {}, -- table: groups you don't want to clear
         })
-        vim.cmd("let g:transparent_enabled = v:false")
+        vim.cmd("let g:transparent_enabled = v:true")
     end
 }

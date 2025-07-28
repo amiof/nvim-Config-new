@@ -21,6 +21,10 @@ vim.keymap.set("n", "|", ":split<cr>", { silent = true })
 vim.keymap.set("n", "<leader>tn", ":tabnew<cr>", { desc = "new tabe", silent = true })
 vim.keymap.set("n", "<leader>tz", ":tabnew %<cr>", { desc = "tabe zoom", silent = true })
 vim.keymap.set("n", "<leader>tzo", ":tabclose<cr>", { desc = "zoom out tabe", silent = true })
+vim.keymap.set("n", "H", "^", { noremap = true, silent = true })
+vim.keymap.set("n", "L", "$", { noremap = true, silent = true })
+vim.keymap.set("v", "H", "^", { noremap = true, silent = true })
+vim.keymap.set("v", "L", "$", { noremap = true, silent = true })
 
 -------wheh ctl-v not work in wsl
 -- vim.cmd("nnoremap Q <c-v>")
@@ -77,7 +81,7 @@ vim.keymap.set('n', '<leader>cr', crates.reload, { desc = "rust crate reload", s
 vim.keymap.set('n', '<leader>cv', crates.show_versions_popup, { desc = "rust crate show versions", silent = true })
 vim.keymap.set('n', '<leader>cf', crates.show_features_popup, { desc = "rust crate show features", silent = true })
 vim.keymap.set('n', '<leader>cd', crates.show_dependencies_popup,
-    { desc = "rust crate show dependencies", silent = true })
+  { desc = "rust crate show dependencies", silent = true })
 -- vim.keymap.set('n', '<leader>cu', crates.update_crate, { desc = "rust crate update", silent = true })
 -- vim.keymap.set('v', '<leader>cu', crates.update_crates, { desc = "rust create update", silent = true })
 -- -- vim.keymap.set('n', '<leader>ca', crates.update_all_crates, { desc = "update all crate", silent = true })
@@ -90,16 +94,16 @@ vim.keymap.set('n', '<leader>cR', crates.open_repository, { desc = "open rust cr
 vim.keymap.set('n', '<leader>cD', crates.open_documentation, { desc = "open rust documentaion", silent = true })
 vim.keymap.set('n', '<leader>cC', crates.open_crates_io, { desc = "open rust crate.io", silent = true })
 local function show_documentation()
-    local filetype = vim.bo.filetype
-    if vim.tbl_contains({ 'vim', 'help' }, filetype) then
-        vim.cmd('h ' .. vim.fn.expand('<cword>'))
-    elseif vim.tbl_contains({ 'man' }, filetype) then
-        vim.cmd('Man ' .. vim.fn.expand('<cword>'))
-    elseif vim.fn.expand('%:t') == 'Cargo.toml' and require('crates').popup_available() then
-        require('crates').show_popup()
-    else
-        vim.lsp.buf.hover()
-    end
+  local filetype = vim.bo.filetype
+  if vim.tbl_contains({ 'vim', 'help' }, filetype) then
+    vim.cmd('h ' .. vim.fn.expand('<cword>'))
+  elseif vim.tbl_contains({ 'man' }, filetype) then
+    vim.cmd('Man ' .. vim.fn.expand('<cword>'))
+  elseif vim.fn.expand('%:t') == 'Cargo.toml' and require('crates').popup_available() then
+    require('crates').show_popup()
+  else
+    vim.lsp.buf.hover()
+  end
 end
 
 vim.keymap.set('n', '<leader>cK', show_documentation, { desc = "show more package doc", silent = true })
@@ -107,18 +111,18 @@ vim.keymap.set('n', '<leader>cK', show_documentation, { desc = "show more packag
 --
 ----------confgi for rust neotest
 vim.keymap.set('n', "<leader>ltF", ":lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
-    { desc = "Debug File", silent = true })
+  { desc = "Debug File", silent = true })
 vim.keymap.set('n', "<leader>ltL", ":lua require('neotest').run.run_last({strategy = 'dap'})<cr>",
-    { desc = "Debug Last", silent = true })
+  { desc = "Debug Last", silent = true })
 vim.keymap.set('n', "<leader>lta", ":lua require('neotest').run.attach()<cr>", { desc = "Attach", silent = true })
 vim.keymap.set('n', "<leader>ltf", ":lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
-    { desc = "File", silent = true })
+  { desc = "File", silent = true })
 vim.keymap.set('n', "<leader>ltl", ":lua require('neotest').run.run_last()<cr>", { desc = "Last", silent = true })
 vim.keymap.set('n', "<leader>ltn", ":lua require('neotest').run.run()<cr>", { desc = "Nearest", silent = true })
 vim.keymap.set('n', "<leader>ltN", ":lua require('neotest').run.run({strategy = 'dap'})<cr>",
-    { desc = "Debug Nearest", silent = true })
+  { desc = "Debug Nearest", silent = true })
 vim.keymap.set('n', "<leader>lto", ":lua require('neotest').output.open({ enter = true })<cr>",
-    { desc = "Output", silent = true })
+  { desc = "Output", silent = true })
 vim.keymap.set('n', "<leader>lts", ":lua require('neotest').run.stop()<cr>", { desc = "Stop", silent = true })
 vim.keymap.set('n', "<leader>ltS", ":lua require('neotest').summary.toggle()<cr>", { desc = "Summary", silent = true })
 
@@ -128,19 +132,19 @@ vim.keymap.set("n", "<leader>hg", ":LazyGit<cr>", { desc = 'open Lazygit', silen
 
 
 ----lspsaga
-    -- See `:help K` for why this keymap
-    vim.keymap.set('n', '<leader>lsf', "<cmd>Lspsaga finder<CR>", { silent = true, desc = "lspsaga finder" })
-    vim.keymap.set('n', '<leader>k', "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = "lspsaga hover" })
-    vim.keymap.set('n', '<leader>lsn', "<cmd>Lspsaga diagnostic_jump_next<CR>",
-        { silent = true, desc = "lspsaga diagnostic_jump_next" })
-    vim.keymap.set('n', '<leader>lst', "<cmd>Lspsaga term_toggle<CR>", { silent = true, desc = "lspsaga term toggle" })
-    vim.keymap.set('n', 'gF', "<cmd>Lspsaga code_action<CR>", { silent = true, desc = "lspsaga code_action" })
-    vim.keymap.set('n', '<leader>lsd', "<cmd>Lspsaga show_buf_diagnostics<CR>",
-        { silent = true, desc = "lspsaga show buffer diagnostic" })
-    vim.keymap.set('n', '<leader>lsg', "<cmd>Lspsaga goto_type_definition<CR>",
-        { silent = true, desc = "lspsaga goto type_definition" })
-    vim.keymap.set('n', '<leader>lsp', "<cmd>Lspsaga peek_definition <CR>",
-        { silent = true, desc = "lspsaga peek_definition" })
+-- See `:help K` for why this keymap
+vim.keymap.set('n', '<leader>lsf', "<cmd>Lspsaga finder<CR>", { silent = true, desc = "lspsaga finder" })
+vim.keymap.set('n', '<leader>k', "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = "lspsaga hover" })
+vim.keymap.set('n', '<leader>lsn', "<cmd>Lspsaga diagnostic_jump_next<CR>",
+  { silent = true, desc = "lspsaga diagnostic_jump_next" })
+vim.keymap.set('n', '<leader>lst', "<cmd>Lspsaga term_toggle<CR>", { silent = true, desc = "lspsaga term toggle" })
+vim.keymap.set('n', 'gF', "<cmd>Lspsaga code_action<CR>", { silent = true, desc = "lspsaga code_action" })
+vim.keymap.set('n', '<leader>lsd', "<cmd>Lspsaga show_buf_diagnostics<CR>",
+  { silent = true, desc = "lspsaga show buffer diagnostic" })
+vim.keymap.set('n', '<leader>lsg', "<cmd>Lspsaga goto_type_definition<CR>",
+  { silent = true, desc = "lspsaga goto type_definition" })
+vim.keymap.set('n', '<leader>lsp', "<cmd>Lspsaga peek_definition <CR>",
+  { silent = true, desc = "lspsaga peek_definition" })
 
 
 
@@ -166,9 +170,9 @@ keymap.amend('n', 'zM', map.close_preview_without_defer)
 -- local opts = { noremap = true, silent = true }
 local ng = require("ng");
 vim.keymap.set("n", "<leader>nt", ng.goto_template_for_component,
-    { desc = "go to template for Component ", noremap = true, silent = true })
+  { desc = "go to template for Component ", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>nc", ng.goto_component_with_template_file,
-    { desc = "go to Component with template", noremap = true, silent = true })
+  { desc = "go to Component with template", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>nT", ng.get_template_tcb, { desc = "get template tcb", noremap = true, silent = true })
 ------------end angular ng config
 --

@@ -133,18 +133,34 @@ vim.keymap.set("n", "<leader>hg", ":LazyGit<cr>", { desc = 'open Lazygit', silen
 
 ----lspsaga
 -- See `:help K` for why this keymap
-vim.keymap.set('n', '<leader>lsf', "<cmd>Lspsaga finder<CR>", { silent = true, desc = "lspsaga finder" })
+vim.keymap.set('n', '<leader>rf', "<cmd>Lspsaga finder<CR>", { silent = true, desc = "lspsaga finder" })
 vim.keymap.set('n', '<leader>k', "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = "lspsaga hover" })
-vim.keymap.set('n', '<leader>lsn', "<cmd>Lspsaga diagnostic_jump_next<CR>",
-  { silent = true, desc = "lspsaga diagnostic_jump_next" })
-vim.keymap.set('n', '<leader>lst', "<cmd>Lspsaga term_toggle<CR>", { silent = true, desc = "lspsaga term toggle" })
-vim.keymap.set('n', 'gF', "<cmd>Lspsaga code_action<CR>", { silent = true, desc = "lspsaga code_action" })
-vim.keymap.set('n', '<leader>lsd', "<cmd>Lspsaga show_buf_diagnostics<CR>",
+vim.keymap.set('n', '<leader>dn', "<cmd>Lspsaga diagnostic_jump_next<CR>",{ silent = true, desc = "lspsaga diagnostic_jump_next" })
+vim.keymap.set('n', '<leader>ra', "<cmd>Lspsaga code_action<CR>", { silent = true, desc = "lspsaga code_action" })
+vim.keymap.set('n', '<leader>dd', "<cmd>Lspsaga show_buf_diagnostics<CR>",
   { silent = true, desc = "lspsaga show buffer diagnostic" })
-vim.keymap.set('n', '<leader>lsg', "<cmd>Lspsaga goto_type_definition<CR>",
+
+vim.keymap.set('n', '<leader>dw', "<cmd>Lspsaga show_workspace_diagnostics<CR>", { silent = true, desc = "lspsaga diagnostic workspace" })
+vim.keymap.set('n', '<leader>rgt', "<cmd>Lspsaga goto_type_definition<CR>",
   { silent = true, desc = "lspsaga goto type_definition" })
-vim.keymap.set('n', '<leader>lsp', "<cmd>Lspsaga peek_definition <CR>",
+vim.keymap.set('n', '<leader>rp', "<cmd>Lspsaga peek_definition <CR>",
   { silent = true, desc = "lspsaga peek_definition" })
+
+vim.keymap.set('n', '<leader>dl', "<cmd>Lspsaga show_line_diagnostics <CR>",
+  { silent = true, desc = "lspsaga line diagnostic" })
+
+vim.keymap.set('n', '<leader>rn', "<cmd>Lspsaga rename <CR>",
+  { silent = true, desc = "lspsaga rename " })
+
+vim.keymap.set('n', '<F4>', '<cmd>Lspsaga term_toggle<CR>', {
+  desc = "Toggle Lspsaga Terminal"
+})
+-- In Terminal mode: This closes the Lspsaga terminal
+vim.keymap.set('t', '<F4>', '<C-\\><C-n><cmd>Lspsaga term_toggle<CR>', {
+  desc = "Toggle Lspsaga Terminal"
+})
+
+vim.keymap.set('n', '<leader>rgd', "<cmd>Lspsaga goto_definition <CR>", { silent = true, desc = "lspsaga goto_definition" })
 
 
 

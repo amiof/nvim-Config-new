@@ -18,7 +18,7 @@ vim.lsp.enable({
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_pttach = function(_, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
@@ -332,7 +332,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       'n', 'v'
     }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>ff', function()
+    vim.keymap.set('n', '<space>rf', function()
       vim.lsp.buf.format {
         async = true
       }

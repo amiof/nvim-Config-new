@@ -128,12 +128,12 @@ vim.keymap.set('n', "<leader>ltS", ":lua require('neotest').summary.toggle()<cr>
 
 ---------------lazygit
 
-vim.keymap.set("n", "<leader>hg", ":LazyGit<cr>", { desc = 'open Lazygit', silent = true })
+vim.keymap.set("n", "<leader>gl", ":LazyGit<cr>", { desc = 'open Lazygit', silent = true })
 
 
 ----lspsaga
 -- See `:help K` for why this keymap
-vim.keymap.set('n', '<leader>rf', "<cmd>Lspsaga finder<CR>", { silent = true, desc = "lspsaga finder" })
+vim.keymap.set('n', '<leader>rr', "<cmd>Lspsaga finder<CR>", { silent = true, desc = "lspsaga finder" })
 vim.keymap.set('n', '<leader>k', "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = "lspsaga hover" })
 vim.keymap.set('n', '<leader>dn', "<cmd>Lspsaga diagnostic_jump_next<CR>",{ silent = true, desc = "lspsaga diagnostic_jump_next" })
 vim.keymap.set('n', '<leader>ra', "<cmd>Lspsaga code_action<CR>", { silent = true, desc = "lspsaga code_action" })
@@ -141,7 +141,7 @@ vim.keymap.set('n', '<leader>dd', "<cmd>Lspsaga show_buf_diagnostics<CR>",
   { silent = true, desc = "lspsaga show buffer diagnostic" })
 
 vim.keymap.set('n', '<leader>dw', "<cmd>Lspsaga show_workspace_diagnostics<CR>", { silent = true, desc = "lspsaga diagnostic workspace" })
-vim.keymap.set('n', '<leader>rgt', "<cmd>Lspsaga goto_type_definition<CR>",
+vim.keymap.set('n', '<leader>rt', "<cmd>Lspsaga goto_type_definition<CR>",
   { silent = true, desc = "lspsaga goto type_definition" })
 vim.keymap.set('n', '<leader>rp', "<cmd>Lspsaga peek_definition <CR>",
   { silent = true, desc = "lspsaga peek_definition" })
@@ -160,7 +160,7 @@ vim.keymap.set('t', '<F4>', '<C-\\><C-n><cmd>Lspsaga term_toggle<CR>', {
   desc = "Toggle Lspsaga Terminal"
 })
 
-vim.keymap.set('n', '<leader>rgd', "<cmd>Lspsaga goto_definition <CR>", { silent = true, desc = "lspsaga goto_definition" })
+vim.keymap.set('n', '<leader>rd', "<cmd>Lspsaga goto_definition <CR>", { silent = true, desc = "lspsaga goto_definition" })
 
 
 

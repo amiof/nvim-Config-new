@@ -110,21 +110,21 @@ vim.keymap.set('n', '<leader>cK', show_documentation, { desc = "show more packag
 --
 --
 ----------confgi for rust neotest
-vim.keymap.set('n', "<leader>ltF", ":lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
+vim.keymap.set('n', "<leader>nF", ":lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
   { desc = "Debug File", silent = true })
-vim.keymap.set('n', "<leader>ltL", ":lua require('neotest').run.run_last({strategy = 'dap'})<cr>",
+vim.keymap.set('n', "<leader>nL", ":lua require('neotest').run.run_last({strategy = 'dap'})<cr>",
   { desc = "Debug Last", silent = true })
-vim.keymap.set('n', "<leader>lta", ":lua require('neotest').run.attach()<cr>", { desc = "Attach", silent = true })
-vim.keymap.set('n', "<leader>ltf", ":lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
+vim.keymap.set('n', "<leader>na", ":lua require('neotest').run.attach()<cr>", { desc = "Attach", silent = true })
+vim.keymap.set('n', "<leader>nf", ":lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
   { desc = "File", silent = true })
-vim.keymap.set('n', "<leader>ltl", ":lua require('neotest').run.run_last()<cr>", { desc = "Last", silent = true })
-vim.keymap.set('n', "<leader>ltn", ":lua require('neotest').run.run()<cr>", { desc = "Nearest", silent = true })
-vim.keymap.set('n', "<leader>ltN", ":lua require('neotest').run.run({strategy = 'dap'})<cr>",
+vim.keymap.set('n', "<leader>nl", ":lua require('neotest').run.run_last()<cr>", { desc = "Last", silent = true })
+vim.keymap.set('n', "<leader>nn", ":lua require('neotest').run.run()<cr>", { desc = "Nearest", silent = true })
+vim.keymap.set('n', "<leader>nN", ":lua require('neotest').run.run({strategy = 'dap'})<cr>",
   { desc = "Debug Nearest", silent = true })
-vim.keymap.set('n', "<leader>lto", ":lua require('neotest').output.open({ enter = true })<cr>",
+vim.keymap.set('n', "<leader>no", ":lua require('neotest').output.open({ enter = true })<cr>",
   { desc = "Output", silent = true })
-vim.keymap.set('n', "<leader>lts", ":lua require('neotest').run.stop()<cr>", { desc = "Stop", silent = true })
-vim.keymap.set('n', "<leader>ltS", ":lua require('neotest').summary.toggle()<cr>", { desc = "Summary", silent = true })
+vim.keymap.set('n', "<leader>ns", ":lua require('neotest').run.stop()<cr>", { desc = "Stop", silent = true })
+vim.keymap.set('n', "<leader>nS", ":lua require('neotest').summary.toggle()<cr>", { desc = "Summary", silent = true })
 
 ---------------lazygit
 

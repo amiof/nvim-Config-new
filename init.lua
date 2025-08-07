@@ -3,15 +3,16 @@ vim.g.maplocalleader = ' '
 
 -- vim.leader = "space"
 
-require("config.lazy") 
+require("config.lazy")
 require("core.mapping")
 require("core.option")
-require("config.masonConfig") 
+require("config.masonConfig")
 require("core.dianoticMapping")
 require("core.telescopeMapping")
 require("lsp.lspConfig")
-require("config.colorscheme") 
-require("config.whichkey-config") 
+require("config.colorscheme")
+require("config.whichkey-config")
+require("config.generalConfig")
 
 
 
@@ -35,11 +36,11 @@ ls.filetype_extend("all", { "_" })
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
 })
 
 -- require("lazy").setup("plugins")
@@ -63,3 +64,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --   },
 --   cache_enabled = true,
 -- }
+--
+--
+--
+--

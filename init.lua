@@ -65,6 +65,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --   cache_enabled = true,
 -- }
 --
---
---
---

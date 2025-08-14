@@ -139,6 +139,7 @@ vim.keymap.set('n', '<leader>rr', "<cmd>Lspsaga finder<CR>", { silent = true, de
 vim.keymap.set('n', '<leader>k', "<cmd>Lspsaga hover_doc<CR>", { silent = true, desc = "lspsaga hover" })
 vim.keymap.set('n', '<leader>dn', "<cmd>Lspsaga diagnostic_jump_next<CR>",{ silent = true, desc = "lspsaga diagnostic_jump_next" })
 vim.keymap.set('n', '<leader>ra', "<cmd>Lspsaga code_action<CR>", { silent = true, desc = "lspsaga code_action" })
+vim.keymap.set('n', '<leader>rs', "<cmd>Lspsaga outline<CR>", { silent = true, desc = "lspsaga code_action" })
 vim.keymap.set('n', '<leader>dd', "<cmd>Lspsaga show_buf_diagnostics<CR>",
   { silent = true, desc = "lspsaga show buffer diagnostic" })
 

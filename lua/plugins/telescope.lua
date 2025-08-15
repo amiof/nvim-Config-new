@@ -5,8 +5,8 @@ return {
     'nvim-lua/plenary.nvim'
   },
   config = function()
-    local actions = require("telescope.actions") 
-
+    local actions = require("telescope.actions")
+    local additional_rg_args = { "--hidden", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*" }
     require('telescope').setup {
       defaults = {
         prompt_prefix = " ",
@@ -64,7 +64,14 @@ return {
           },
         }
       },
-      pickers = {},
+      pickers = {
+        find_files = {
+          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        },
+        live_grep = { additional_args = additional_rg_args },
+        grep_string = { additional_args = additional_rg_args },
+      },
       extensions = {
         media_files = {
           filetypes = { "png", "webp", "jpg", "jpeg" },

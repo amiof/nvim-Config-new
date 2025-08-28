@@ -65,3 +65,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --   cache_enabled = true,
 -- }
 --
+vim.api.nvim_set_hl(0, 'Cursor', { fg = '#ff8800', bg = '#ff8800' })
+vim.api.nvim_set_hl(0, 'CursorIM', { fg = '#ff8800', bg = '#ff8800' }) -- For insert mode
+vim.api.nvim_set_hl(0, 'TermCursor', { fg = '#ff8800', bg = '#ff8800' }) -- For terminal mode

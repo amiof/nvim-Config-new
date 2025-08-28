@@ -78,7 +78,10 @@ vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
 --code spell--------------------------------
 -- vim.o.spellfile = vim.o.runtimepath .. "/spell/en.utf-8.add"
 -- vim.env.SPELLHOME = vim.fn.stdpath("data") .. "/spell"
-vim.opt.spell = true
+--
+--
+----------------------------
+vim.opt.spell = false
 vim.opt.spelllang = "en"
 vim.opt.spelloptions="camel"
 -----------------end code spell----------------------
